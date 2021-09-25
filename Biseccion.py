@@ -13,23 +13,22 @@ def Biseccion(a,b,e):
     condition = True
     while condition:    
         x0 = ((a+b)/2)
-        print('x0 = %0.6f'%(x0))
+        err = abs(0.567115-x0)
         FunE = f1(x0)
-        if FunE == 0:
-            print('Iteracion %d, a = %0.1f b = %0.1f y f(x0) = %0.6f'% (step, a, b , FunE))
-            print('\nEl valor de la raíz es ',x0)
+        if err < e:
+            print('Iteracion %d, a = %0.1f b = %0.1f x0 = %0.4f y Error = %0.4f'% (step,a,b,x0,err))
+            print('\nEl valor de la raíz es %0.4f'%(x0))
             break
             
         elif FunE < 0 :
-            print('Iteracion %d, a = %0.1f b = %0.1f y f(x0) = %0.6f'% (step, a, b , FunE))
+            print('Iteracion %d, a = %0.1f b = %0.1f x0 = %0.4f y Error = %0.4f'% (step,a,b,x0,err))
             a = x0
             step = step + 1
             
         else:
-            print('Iteracion %d, a = %0.1f b = %0.1f y f(x0) = %0.6f'% (step, a, b , FunE))
+            print('Iteracion %d, a = %0.1f b = %0.1f x0 = %0.4f y Error = %0.4f'% (step,a,b,x0,err))
             step = step + 1
             b = x0
-        if step == 16:break
     return
 
 a = float(input('valor a: '))

@@ -41,12 +41,9 @@ def newtonRaphson(x0,e,N):
     else:
         print('\nNo converge')
 
-
 #Inicia el programa
-
 x0 = float(input('Valor inicial '))
 e = float(input('Tolerancia: '))
 N = int(input('Iteracion maxima: ')) 
 
-# Starting Newton Raphson Method
 newtonRaphson(x0,e,N)
